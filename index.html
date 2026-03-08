@@ -20,13 +20,64 @@
 </head>
 <body>
 
-    <h1>F IT WE BALL</h1>
+	<div class="col-12 justify-content-center d-flex py-3">
 
+		<div class="card col-11">
+			<div class="card-body">
 
+				<h1>F IT WE BALL</h1>
+				
+				<div id="divGeoData">
+					<p>Latitude: </p>
+					<p>Longitude: </p>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     
+	<script>
+		// https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,cloud_cover,wind_speed_10m,wind_gusts_10m&models=best_match&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch
+		const strBaseUrl = 'https://api.open-meteo.com/v1/forecast'
+
+		// Everything besides the latitude and longitude
+		const strUrlReturnData = '&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,cloud_cover,wind_speed_10m,wind_gusts_10m&models=best_match&wind_speed_unit=mph&temperature_unit=fahrenheit&'
+
+
+		// Get latitude and longitude
+
+		// Check if geolocation is supported by the browser
+		if ("geolocation" in navigator) {
+			// Prompt user for permission to access their location
+			navigator.geolocation.getCurrentPosition(
+				// Success callback function
+				(position) => {
+					// Get the user's latitude and longitude coordinates
+					const numUserLat = position.coords.latitude;
+					const numUserLong = position.coords.longitude;
+
+					// Do something with the location data, e.g. display on a map
+					console.log(`Latitude: ${numUserLat}, longitude: ${numUserLong}`);
+					document.querySelector('#divGeoData').innerHTML = `
+					<p>Latitude: ${numUserLat}</p>
+					<p>Longitude: ${numUserLong}</p>`
+				},
+				// Error callback function
+				(error) => {
+					// Handle errors, e.g. user denied location sharing permissions
+					console.error("Error getting user location:", error);
+				}
+			);
+		} else {
+			// Geolocation is not supported by the browser
+			console.error("Geolocation is not supported by this browser.");
+		}
+
+	</script>
 </body>
 </html>
 
@@ -48,5 +99,10 @@
         Was used for easily generating icons for website and 
         app icons. Documentation was followed
         -   https://favicon.io/favicon-converter/
+
+		Geolocation code was obtained and altered from Geoapify
+		-	https://www.geoapify.com/how-to-get-user-location-with-javascript/
+
+
 
 ################################################################ -->
