@@ -19,14 +19,16 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 </head>
-<body bg-gray>
+<body class="bg-light">
 
 	<div class="justify-content-center d-flex py-4">
 		<div class="col-11">
 			<div class="justify-content-center d-flex row py-5">
 
+				<!-- Header Info -->
+
 				<div class="col-12 text-center" id="divHeader">
-					<h2><i class="bi bi-geo-alt-fill me-2"></i>City</h2>
+					<h2><i class="bi bi-geo-alt-fill text-primary opacity-75 me-2"></i>City</h2>
 				
 					<p class="display-1 text-center"></i>100°</p>
 
@@ -36,46 +38,130 @@
 
 				</div>
 
+				<!-- Cards -->
+
+				<!-- Adapted from bootstrap -->
 				<div class="row g-3">
 
 					<div class="col-12 col-md-6">
-						<div class="card" id="cardTempRange">
-							<div class="card-body">
-								<h3>Temperature Range: 50° - 60°</h3>
+						<div class="card">
+							<div class="row g-0 align-items-center">
+								<div class="col-2 text-center" id="divTempRangIcon">
+									<i class="bi bi-thermometer text-danger fs-1"></i>
+								</div>
+								<div class="col-5">
+									<div class="card-body" id="divTempRangeData">
+										<h3 class="text-start">50° - 60°</h3>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="card-body">
+										<h5 class="text-end fw-light">Temperature</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-12 col-md-6">
+						<div class="card">
+							<div class="row g-0 align-items-center">
+								<div class="col-2 text-center" id="divRainIcon">
+									<i class="bi bi-cloud-fill text-secondary fs-1"></i>
+								</div>
+								<div class="col-5">
+									<div class="card-body" id="divRainData">
+										<h3 class="text-start">23%</h3>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="card-body">
+										<h5 class="text-end fw-light">Chance of Rain</h5>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-12 col-md-6">
-						<div class="card" id="cardRain">
-							<div class="card-body">
-								<h3>Chance of Rain: 23%</h3>
+						<div class="card">
+							<div class="row g-0 align-items-center">
+								<div class="col-2 text-center">
+									<i class="bi bi-moisture text-primary opacity-75 fs-1"></i>
+								</div>
+								<div class="col-5">
+									<div class="card-body" id="divHumidityData">
+										<h3 class="text-start">23%</h3>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="card-body">
+										<h5 class="text-end fw-light">Humidity</h5>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-12 col-md-6">
-						<div class="card" id="cardHumidity">
-							<div class="card-body">
-								<h3>Humidity: 44%</h3>
+						<div class="card">
+							<div class="row g-0 align-items-center">
+								<div class="col-2 text-center" id="divSunIcon">
+									<i class="bi bi-sunrise-fill text-warning fs-1"></i>
+								</div>
+								<div class="col-5">
+									<div class="card-body" id="divSunData">
+										<h3 class="text-start">9:00</h3>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="card-body" id="divSunType">
+										<h5 class="text-end fw-light">Sunrise Time</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-12 col-md-6">
+						<div class="card h-100">
+							<div class="row g-0 align-items-center">
+								<div class="col-2 text-center">
+									<i class="bi bi-wind text-secondary fs-1"></i>
+								</div>
+								<div class="col-5">
+									<div class="card-body" id="divWindData">
+										<h3 class="text-start">90 mph</h3>
+										<h3 class="text-start">200 mph</h3>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="card-body">
+										<h5 class="text-end fw-light">Wind Speed</h5>
+										<h5 class="text-end fw-light">Wind Gust Speed</h5>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
 
 					<div class="col-12 col-md-6">
-						<div class="card" id="cardSunTime">
-							<div class="card-body">
-								<h3>Sunrise: TIME</h3>
-							</div>
-						</div>
-					</div>
-
-					<div class="col-12">
-						<div class="card" id="cardWind">
-							<div class="card-body">
-								<h3>Wind Speed: 90mph</h3>
-								<h3>Wind Gust Speed: 200mph</h3>
-								<h3>Wind Direction: 220°</h3>
+						<div class="card h-100">
+							<div class="row g-0 align-items-center mt-3">
+								<div class="col-2 text-center" id="divWindDirIcon">
+									<i class="bi bi-arrow-up text-primary opacity-75 fs-1"></i>
+								</div>
+								<div class="col-5">
+									<div class="card-body" id="divWindDirData">
+										<h3 class="text-start">220°</h3>
+									</div>
+								</div>
+								<div class="col-5">
+									<div class="card-body">
+										<h5 class="text-end fw-light">Wind Direction</h5>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -148,15 +234,181 @@
 					.then(data => {
 						console.log(data)
 
-						// strCurrTemp = data.
+						let numCurrTemp = Math.round(data.current.temperature_2m)
+						let numApparentTemp = Math.round(data.current.apparent_temperature)
+
+						// Determines weather description based off of cloud coverage
+						numCloudCover = data.current.cloud_cover
+						let strCloudCover = ''
+						if (numCloudCover >= 90) {
+							strCloudCover = 'Cloudy'
+						}
+						else if (numCloudCover >= 60) {
+							strCloudCover = 'Partly Cloudy'
+						}
+						else if (numCloudCover >= 30) {
+							strCloudCover = 'Partly Sunny'
+						}
+						else {
+							strCloudCover = 'Clear Skies'
+						}
 						
-						// <i class="bi bi-thermometer"></i>
-						// <i class="bi bi-thermometer-low"></i>
-						// <i class="bi bi-thermometer-half">
-						// <i class="bi bi-thermometer-high"></i>
+
+						// Updates header data
+
+						document.querySelector('#divHeader').innerHTML = `
+						<h2><i class="bi bi-geo-alt-fill text-primary opacity-75 me-2"></i>${strUserCity}</h2>
+						<p class="display-1 text-center"></i>${numCurrTemp}°</p>
+						<p class="fs-3 text-center">${strCloudCover}</p>
+						<p class="fs-3 text-center">Feels like ${numApparentTemp}°</p>`
+						
+						console.log(strUserCity)
+						console.log(numCurrTemp)
+						console.log(strCloudCover)
+						console.log(numApparentTemp)
 
 
-							
+						// Updates temperature range
+
+						let numMaxTemp = Math.round(data.daily.temperature_2m_max[0])
+						let numMinTemp = Math.round(data.daily.temperature_2m_min[0])
+
+						// Determines what the icon should be based off of mean temp
+						let strTempRangeIcon = ''
+						let numMeanTemp = (numMaxTemp + numMinTemp) / 2
+						if (numMeanTemp >= 75) {
+							strTempRangeIcon = `<i class="bi bi-thermometer-high text-danger fs-1"></i>`
+						}
+						else if (numMeanTemp >= 50) {
+							strTempRangeIcon = `<i class="bi bi-thermometer-half text-warning fs-1">`
+						}
+						else if (numMeanTemp >= 25) {
+							strTempRangeIcon = `<i class="bi bi-thermometer text-primary opacity-75 fs-1">`
+						}
+						else {
+							strTempRangeIcon = `<i class="bi bi-thermometer text-primary fs-1"></i>`
+						}
+
+						// Sets icon and values for temperature range
+						document.querySelector('#divTempRangIcon').innerHTML = strTempRangeIcon
+						document.querySelector('#divTempRangeData').innerHTML = `
+						<h3 class="text-start">${numMinTemp}° - ${numMaxTemp}°</h3>`
+						console.log(`Min: ${numMinTemp}, Max: ${numMaxTemp}`)
+						
+
+						// Update rain chance card
+
+						let numRainChance = data.daily.precipitation_probability_max[0]
+						let strRainIcon = ''
+
+						// Determines icon based off of rain chance
+						if (numRainChance >= 75) {
+							strRainIcon = `<i class="bi bi-cloud-rain-heavy-fill text-secondary fs-1"></i>`
+						}
+						else if (numRainChance >= 50) {
+							strRainIcon = `<i class="bi bi-cloud-rain-fill text-secondary fs-1"></i>`
+						}
+						else if (numRainChance >= 25) {
+							strRainIcon = `<i class="bi bi-cloud-drizzle-fill text-secondary fs-1"></i>`
+						}
+						else {
+							strRainIcon = `<i class="bi bi-cloud-fill text-secondary fs-1"></i>`
+						}
+
+						// Update html for rain chance icon and data
+						document.querySelector('#divRainIcon').innerHTML = strRainIcon
+						document.querySelector('#divRainData').innerHTML = `
+						<h3 class="text-start">${numRainChance}%</h3>`
+						console.log(`Rain: ${numRainChance}`)
+
+
+						// Update data for humidity card
+
+						let numHumidity = data.current.relative_humidity_2m
+						document.querySelector('#divHumidityData').innerHTML = `
+						<h3 class="text-start">${numHumidity}%</h3>`
+						console.log(`Humidity: ${numHumidity}`)
+
+
+						// Update sunrise/sunset card
+
+						let boolIsDay = data.current.is_day
+						let strDayIcon = ''
+						let strDayText = ''
+						let numDayTime
+
+						if (boolIsDay) {
+							strDayIcon = `<i class="bi bi-sunset-fill text-warning fs-1"></i>`
+							strDayText = `<h5 class="text-end fw-light">Sunset Time</h5>`
+							numDayTime = new Date(data.daily.sunset[0] + 'Z')
+							umDayTime = numDayTime.toLocaleTimeString('en-US', {
+								hour: '2-digit', minute: '2-digit', hour12: true})
+							console.log(`Time: ${numDayTime}`)
+						}
+						else {
+							strDayIcon = `<i class="bi bi-sunrise-fill text-warning fs-1"></i>`
+							strDayText = `<h5 class="text-end fw-light">Sunrise Time</h5>`
+							numDayTime = new Date(data.daily.sunrise[0] + 'Z')
+							numDayTime = numDayTime.toLocaleTimeString('en-US', {
+								hour: '2-digit', minute: '2-digit', hour12: true})
+							console.log(`Time: ${numDayTime}`)
+						}
+						// Update html
+						document.querySelector('#divSunIcon').innerHTML = strDayIcon
+						document.querySelector('#divSunData').innerHTML = `
+						<h3 class="text-start">${numDayTime}</h3>`
+						document.querySelector('#divSunType').innerHTML = strDayText
+						
+
+						// Update wind card
+
+						let numWindSpeed = data.current.wind_speed_10m
+						let numWindGusts = data.current.wind_gusts_10m
+
+						document.querySelector('#divWindData').innerHTML = `
+						<h3 class="text-start">${numWindSpeed} mph</h3>
+						<h3 class="text-start">${numWindGusts} mph</h3>`
+
+
+						// Update wind direction card
+
+						let numWindDirection = data.current.wind_direction_10m
+						let strWindDirIcon = ''
+
+						// Determine correct image for wind direction (arrow)
+						if (numWindDirection <= 22.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-up text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 67.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-up-right text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 112.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-right text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 157.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-down-right text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 202.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-down text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 247.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-down-left text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 292.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-left text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 337.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-up-left text-primary opacity-75 fs-1"></i>`
+						}
+						else {
+							strWindDirIcon = `<i class="bi bi-arrow-up text-primary opacity-75 fs-1"></i>`
+						}
+
+						// Update html for wind direction card
+						document.querySelector('#divWindDirIcon').innerHTML = strWindDirIcon
+						document.querySelector('#divWindDirData').innerHTML = `
+						<h3 class="text-start">${numWindDirection}°</h3>`
+						
 					})
 				},
 
@@ -211,7 +463,8 @@
 		Asked ChatGPT which sources were best for free reverse geolocation
 		and an option listed was BigDataCloud.com, listed below.
 
-		...
+		Asked Gemini for the ranges of cardinal directions for creating wind 
+		direction icon
 
     Other Sources:
 
@@ -227,6 +480,10 @@
 
 		Used to understand how 'clear', 'partly cloudy', and 'cloudy' are determined
 		-	https://www.weather.gov/psr/didyouknow
+
+		Used for reading date time variables
+		-	https://stackoverflow.com/questions/4829569/parsing-iso-8601-date-in-javascript
+		- 	https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
 
 		...
 
