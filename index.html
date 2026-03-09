@@ -16,26 +16,73 @@
 
 	<!-- CDNs -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 </head>
-<body>
+<body bg-gray>
 
-	<div class="col-12 justify-content-center d-flex py-3">
+	<div class="justify-content-center d-flex py-4">
+		<div class="col-11">
+			<div class="justify-content-center d-flex row py-5">
 
-		<div class="card col-11">
-			<div class="card-body">
-
-				<h1>F IT WE BALL</h1>
+				<div class="col-12 text-center" id="divHeader">
+					<h2><i class="bi bi-geo-alt-fill me-2"></i>City</h2>
 				
-				<div id="divGeoData">
-					<p>Latitude: </p>
-					<p>Longitude: </p>
-					<p>City: </p>
+					<p class="display-1 text-center"></i>100°</p>
+
+					<p class="fs-3 text-center">Cloudy</p>
+
+					<p class="fs-3 text-center">Feels like 50°</p>
+
 				</div>
 
+				<div class="row g-3">
+
+					<div class="col-12 col-md-6">
+						<div class="card" id="cardTempRange">
+							<div class="card-body">
+								<h3>Temperature Range: 50° - 60°</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6">
+						<div class="card" id="cardRain">
+							<div class="card-body">
+								<h3>Chance of Rain: 23%</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6">
+						<div class="card" id="cardHumidity">
+							<div class="card-body">
+								<h3>Humidity: 44%</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6">
+						<div class="card" id="cardSunTime">
+							<div class="card-body">
+								<h3>Sunrise: TIME</h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12">
+						<div class="card" id="cardWind">
+							<div class="card-body">
+								<h3>Wind Speed: 90mph</h3>
+								<h3>Wind Gust Speed: 200mph</h3>
+								<h3>Wind Direction: 220°</h3>
+							</div>
+						</div>
+					</div>
+
+				</div>
 			</div>
 		</div>
-
 	</div>
 
 
@@ -46,10 +93,9 @@
 
 		const strBaseWeatherUrl = 'https://api.open-meteo.com/v1/forecast'
 		// ?latitude=52.52&longitude=13.41
-		// &hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,cloud_cover,wind_speed_10m,wind_gusts_10m&models=best_match&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch
 
 		// Everything besides the latitude and longitude
-		const strWeatherUrlReturnData = '&hourly=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation_probability,precipitation,cloud_cover,wind_speed_10m,wind_gusts_10m&models=best_match&wind_speed_unit=mph&temperature_unit=fahrenheit&'
+		const strWeatherUrlReturnData = '&daily=temperature_2m_max,temperature_2m_min,sunrise,sunset,precipitation_probability_max&models=best_match&current=temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,rain,showers,snowfall,cloud_cover,weather_code,wind_direction_10m,wind_gusts_10m,wind_speed_10m&wind_speed_unit=mph&temperature_unit=fahrenheit&precipitation_unit=inch'
 
 
 		// Get latitude and longitude (source: Geoapify)
@@ -101,8 +147,17 @@
 
 					.then(data => {
 						console.log(data)
-					})
 
+						// strCurrTemp = data.
+						
+						// <i class="bi bi-thermometer"></i>
+						// <i class="bi bi-thermometer-low"></i>
+						// <i class="bi bi-thermometer-half">
+						// <i class="bi bi-thermometer-high"></i>
+
+
+							
+					})
 				},
 
 				
@@ -113,7 +168,7 @@
 					Swal.fire({
 						icon: "error",
 						title: "We can't get your location",
-						text: "Please ensure your settings allow this browser to access your location."
+						text: "To view the weather, please ensure your settings allow this browser to access your location."
 					});
 
 					// Handle errors, e.g. user denied location sharing permissions
@@ -169,6 +224,9 @@
 
 		Reverse geolocation endpoint source was from BigDataCloud
 		-	https://www.bigdatacloud.com/free-api/free-reverse-geocode-to-city-api
+
+		Used to understand how 'clear', 'partly cloudy', and 'cloudy' are determined
+		-	https://www.weather.gov/psr/didyouknow
 
 		...
 
