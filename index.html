@@ -377,31 +377,34 @@
 
 						// Determine correct image for wind direction (arrow)
 						if (numWindDirection <= 22.5) {
-							strWindDirIcon = `<i class="bi bi-arrow-up text-primary opacity-75 fs-1"></i>`
+							strWindDirIcon = `<i class="bi bi-arrow-down text-primary opacity-75 fs-1"></i>`
+							
 						}
 						else if (numWindDirection <= 67.5) {
-							strWindDirIcon = `<i class="bi bi-arrow-up-right text-primary opacity-75 fs-1"></i>`
-						}
-						else if (numWindDirection <= 112.5) {
-							strWindDirIcon = `<i class="bi bi-arrow-right text-primary opacity-75 fs-1"></i>`
-						}
-						else if (numWindDirection <= 157.5) {
-							strWindDirIcon = `<i class="bi bi-arrow-down-right text-primary opacity-75 fs-1"></i>`
-						}
-						else if (numWindDirection <= 202.5) {
-							strWindDirIcon = `<i class="bi bi-arrow-down text-primary opacity-75 fs-1"></i>`
-						}
-						else if (numWindDirection <= 247.5) {
 							strWindDirIcon = `<i class="bi bi-arrow-down-left text-primary opacity-75 fs-1"></i>`
 						}
-						else if (numWindDirection <= 292.5) {
+						else if (numWindDirection <= 112.5) {
 							strWindDirIcon = `<i class="bi bi-arrow-left text-primary opacity-75 fs-1"></i>`
 						}
-						else if (numWindDirection <= 337.5) {
+						else if (numWindDirection <= 157.5) {
 							strWindDirIcon = `<i class="bi bi-arrow-up-left text-primary opacity-75 fs-1"></i>`
 						}
-						else {
+						else if (numWindDirection <= 202.5) {
 							strWindDirIcon = `<i class="bi bi-arrow-up text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 247.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-up-right text-primary opacity-75 fs-1"></i>`
+						}
+						else if (numWindDirection <= 292.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-right text-primary opacity-75 fs-1"></i>`
+							
+						}
+						else if (numWindDirection <= 337.5) {
+							strWindDirIcon = `<i class="bi bi-arrow-down-right text-primary opacity-75 fs-1"></i>`
+							
+						}
+						else {
+							strWindDirIcon = `<i class="bi bi-arrow-down text-primary opacity-75 fs-1"></i>`
 						}
 
 						// Update html for wind direction card
